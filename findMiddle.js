@@ -15,13 +15,23 @@ function findMiddle(haystack, needle) {
     // }
     // return -1
   
-    for(let i=0;i<haystack.length;i++){
-        for(let j=0;j<needle.length;j++){
-            if(haystack[i+j]!==needle[j]) break
-            if(j===needle.length-1)return i
+    // for(let i=0;i<haystack.length;i++){
+    //     for(let j=0;j<needle.length;j++){
+    //         if(haystack[i+j]!==needle[j]) break
+    //         if(j===needle.length-1)return i
+    //     }
+    // }
+    // return -1
+
+    for(let i=0; i  < haystack.length - needle.length + 1;i++){
+        console.log(haystack.length - needle.length + 1 )
+          if(haystack[i] === needle[0]){
+            console.log(haystack[i] )
+            if(haystack.slice(i, needle.length + i) === needle)  return i
+      
+          }
         }
-    }
-    return -1
+        return -1
 }
 
 console.log(findMiddle("react-redux", "redux"))
